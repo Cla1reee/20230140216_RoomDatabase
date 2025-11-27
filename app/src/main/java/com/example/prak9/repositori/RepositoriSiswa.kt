@@ -1,7 +1,7 @@
 package com.example.prak9.repositori
 
-import com.example.prak9.dao.SiswaDao
-import com.example.prak9.model.Siswa
+import com.example.prak9.room.Siswa
+import com.example.prak9.room.SiswaDao
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoriSiswa {
