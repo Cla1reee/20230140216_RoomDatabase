@@ -3,7 +3,7 @@ package com.example.prak9.room
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "siswa")
+@Entity(tableName = "tbl_siswa")
 data class Siswa(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
