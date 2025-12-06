@@ -10,18 +10,19 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SiswaDao {
+    @Query("SELECT * from tbl_Siswa ORDER BY nama ASC")
+    fun getAllSiswa(): Flow<List<Siswa>>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(siswa: Siswa)
+
+    //Edit : tambah 3 fungsi berikut
+    @Query("SELECT * from tbl_Siswa WHERE id = :id")
+    fun getSiswa(id: Int): Flow<Siswa>
 
     @Update
     suspend fun update(siswa: Siswa)
 
     @Delete
     suspend fun delete(siswa: Siswa)
-
-    @Query("SELECT * from tbl_siswa WHERE id = :id")
-    fun getSiswa(id: Int): Flow<Siswa>
-
-    @Query("SELECT * from tbl_siswa ORDER BY nama ASC")
-    fun getAllSiswa(): Flow<List<Siswa>>
 }
